@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Phân tích cơ bản{% endblock %}
+{% block content %}
+<h1>Phân tích cơ bản</h1>
+
+{% if results.error %}
+  <p style="color:red;">{{ results.error }}</p>
+{% else %}
+  <div class="analysis-section">
+    {% for i in range(1, 6) %}
+      <h2>{{ results["query" ~ i ~ "_title"] }}</h2>
+      <div class="table-box">
+        {{ results["query" ~ i] | safe }}
+      </div>
+      <hr>
+    {% endfor %}
+  </div>
+{% endif %}
+{% endblock %}

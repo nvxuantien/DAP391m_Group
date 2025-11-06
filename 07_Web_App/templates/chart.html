@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Biểu đồ cổ phiếu{% endblock %}
+{% block content %}
+
+<div class="predict-container">
+  <h1 class="predict-title">Biểu đồ cổ phiếu</h1>
+
+  {% for c in charts %}
+  <div class="chart-item">
+    <h3>{{ c.name }}</h3>
+    <img src="{{ c.path }}" alt="{{ c.name }}" class="chart-img">
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

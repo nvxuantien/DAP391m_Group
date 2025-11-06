@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div class="sidebar">
+    <h2>Milk Dashboard</h2>
+    <ul>
+      <li><a href="{{ url_for('dashboard') }}">📊 Dashboard</a></li>
+      <li><a href="{{ url_for('predict') }}">📈 Dự đoán giá</a></li>
+      <li><a href="{{ url_for('analysis_page') }}">📘 Phân tích cơ bản</a></li>
+      <li><a href="{{ url_for('chart_page') }}">📈 Biểu đồ cổ phiếu</a></li>
+      <li><a href="#" id="chatbotBtn">💬 Chatbot</a></li>
+      <li><a href="{{ url_for('logout') }}">🚪 Đăng xuất</a></li>
+    </ul>
+  </div>
+
+  <div class="main">
+    {% block content %}{% endblock %}
+  </div>
+
+  <div id="chatbotContainer" class="chatbot-container hidden">
+    <div class="chat-header">Chatbot AI</div>
+    <div id="chatMessages" class="chat-messages"></div>
+    <div class="chat-input">
+      <input type="text" id="userInput" placeholder="Nhập câu hỏi...">
+      <button onclick="sendMessage()">Gửi</button>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='chatbot.js') }}"></script>
+</body>
+</html>

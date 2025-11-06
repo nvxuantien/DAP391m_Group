@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Dashboard{% endblock %}
+{% block content %}
+<h1>Biểu đồ cổ phiếu</h1>
+
+<div class="controls">
+  <select id="symbolSelect">
+    {% for s in stocks %}
+      <option value="{{ s }}">{{ s }}</option>
+    {% endfor %}
+  </select>
+  <input type="date" id="startDate">
+  <input type="date" id="endDate">
+  <button onclick="loadChart()">Hiển thị</button>
+</div>
+
+<div class="stock-info">
+  <div class="info-box" id="priceBox">Giá hiện tại: --</div>
+  <div class="info-box" id="changeBox">Thay đổi: --</div>
+  <div class="info-box" id="volumeBox">Khối lượng: --</div>
+  <div class="info-box" id="rsiBox">RSI: --</div>
+</div>
+
+<div id="chartContainer" class="chart-container"></div>
+
+<script src="{{ url_for('static', filename='dashboard.js') }}"></script>
+{% endblock %}

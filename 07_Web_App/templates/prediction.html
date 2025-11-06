@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block title %}Dự đoán giá cổ phiếu{% endblock %}
+{% block content %}
+
+<div class="predict-container">
+  <h1 class="predict-title">Dự đoán giá cổ phiếu</h1>
+
+  <form method="POST" class="predict-form">
+    <div class="form-row">
+      <label for="symbol">Mã cổ phiếu:</label>
+      <select id="symbol" name="symbol" required>
+        {% for s in stocks %}
+          <option value="{{ s }}" {% if symbol == s %}selected{% endif %}>{{ s }}</option>
+        {% endfor %}
+      </select>
+
+      <label for="model">Chọn mô hình:</label>
+      <select id="model" name="model">
+        <option value="random_forest" {% if model == "random_forest" %}selected{% endif %}>Random Forest</option>
+        <option value="linear_regression" {% if model == "linear_regression" %}selected{% endif %}>Linear Regression</option>
+        <option value="voting_regressor" {% if model == "voting_regressor" %}selected{% endif %}>Voting Regressor</option>
+        <option value="arima_model" {% if model == "arima_model" %}selected{% endif %}>ARIMA</option>
+      </select>
+
+      <button type="submit" class="predict-btn">Dự đoán</button>
+    </div>
+  </form>
+
+  {% if result %}
+  <div class="predict-result">
+    <h3>Kết quả dự đoán</h3>
+    <p><strong>Mã cổ phiếu:</strong> {{ symbol }}</p>
+    <p><strong>Giá dự đoán:</strong> <span class="price">{{ result }}</span></p>
+    <p><em>{{ message }}</em></p>
+  </div>
+  {% endif %}
+</div>
+
+{% endblock %}
