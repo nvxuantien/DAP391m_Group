@@ -1,0 +1,301 @@
+/* ===== Layout chính ===== */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(120deg, #84fab0, #8fd3f4);
+  color: #333;
+}
+
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 220px;
+  height: 100%;
+  background: #1f2a44;
+  color: white;
+  padding: 20px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.sidebar ul li a:hover {
+  background-color: #3b4b75;
+}
+
+.main {
+  margin-left: 240px;
+  padding: 30px;
+}
+
+/* ===== Login Page ===== */
+.login-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: linear-gradient(120deg, #84fab0, #8fd3f4);
+}
+
+.login-card {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  width: 300px;
+}
+
+.login-card h2 {
+  text-align: center;
+}
+
+.login-card input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.login-card button {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background: #1f2a44;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.error {
+  color: red;
+  text-align: center;
+}
+
+/* ===== Dashboard ===== */
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.info-box {
+  display: inline-block;
+  background: white;
+  border-radius: 8px;
+  padding: 15px 25px;
+  margin: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.chart-container {
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* ===== Chatbot ===== */
+.chatbot-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 320px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden { display: none; }
+
+.chat-header {
+  background: #1f2a44;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  padding: 10px;
+  overflow-y: auto;
+  height: 300px;
+}
+
+.chat-input {
+  display: flex;
+}
+
+.chat-input input {
+  flex: 1;
+  border: none;
+  padding: 10px;
+  outline: none;
+}
+
+.chat-input button {
+  background: #1f2a44;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+}
+.data-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.data-table th, .data-table td {
+  border: 1px solid #ccc;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+.data-table th {
+  background: #1f2a44;
+  color: white;
+}
+
+.table-box {
+  overflow-x: auto;
+}
+.predict-container {
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  width: 70%;
+  margin: 40px auto;
+  text-align: center;
+  transition: all 0.3s ease;
+}
+
+.predict-container:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.predict-title {
+  font-size: 28px;
+  color: #1f2a44;
+  margin-bottom: 25px;
+  font-weight: 700;
+}
+
+.predict-form {
+  margin-bottom: 25px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.form-row label {
+  font-weight: 600;
+  color: #333;
+}
+
+.form-row select {
+  padding: 8px 12px;
+  border-radius: 8px;
+  border: 1px solid #aaa;
+  background: #fff;
+  transition: 0.3s;
+}
+
+.form-row select:hover {
+  border-color: #007bff;
+}
+
+.predict-btn {
+  background: #1f2a44;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.predict-btn:hover {
+  background: #007bff;
+}
+
+.predict-result {
+  background: #ffffff;
+  border-radius: 15px;
+  padding: 20px;
+  width: 60%;
+  margin: 0 auto;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+.predict-result h3 {
+  color: #1f2a44;
+  margin-bottom: 10px;
+}
+
+.price {
+  color: #007bff;
+  font-size: 22px;
+  font-weight: 700;
+}
+
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(10px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+/* aaaaa */
+.chart-item {
+  background-color: #fff;
+  padding: 16px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+.chart-item h3 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.chart-img {
+  width: 95%;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
